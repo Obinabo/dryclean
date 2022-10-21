@@ -694,9 +694,7 @@ p{
     font-weight: bold;
  }
 
- .contact-box {
-    padding: 5px 10px;
- }
+
 
 /******** For Screens Less Than 500px **********/
 @media (max-width: 500px){
@@ -759,15 +757,19 @@ p{
         margin-bottom: 10px;
     }
     .testimonial-cont{
-        padding: 5px;}
+        padding: 5px;
+    }
+    .contact{
+        display: none;
+    }
+    .contact-box {
+        padding: 5px 10px;
+     }
 }
 @media (min-width: 500px){
     .nav .nav-mob-items{display: none;}
     .nav .mob-nav{display: none;}
     .nav .mob-item {display: none;}
-}
-.contact{
-    display: none;
 }
 
 
