@@ -1,0 +1,800 @@
+@font-face {
+    font-family:'baset';
+    src: url('../fonts/Baseticatrial.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:'baset' ;
+    src: url('../fonts/Baseticatrial-Bold.woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/******* Universal Selectors*******/
+*{box-sizing: border-box;}
+html, body, table, tbody, tr, th, td, article, aside, figcaption, figure, footer, header, hgroup, menu, nav, 
+section, summary, time, mark, audio, video, ul, li{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: baset, 'Times New Roman', Times, serif; 
+    color:rgb(11, 1, 34); 
+    width: 100%; 
+    max-width: 1366px;
+    font-size: 1em; 
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    line-height: 150%;
+    position: relative;
+}
+h1{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+h2{
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+a{
+    color: rgb(11, 1, 34);
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(252, 13, 144);
+    text-decoration: none;
+}
+
+p{
+    font-size: 1em; 
+    line-height: 150%; 
+    font-weight: normal; 
+}
+.btn{
+    padding: 5px 10px;
+    display: block;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(180deg, rgb(252, 13, 144) 20%, rgb(167, 3, 93) 80%);
+    border-radius: 10px;
+}
+.btn:hover{
+    padding: 5px 10px;
+    display: block;
+    background-color: transparent;
+    border-radius: 10px;
+    color: rgb(252, 13, 144);
+    border: 1px solid rgb(252, 13, 144);
+}
+
+
+/*********** Preloader ***********/
+#preloader{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: rgb(11, 1, 34);
+    top: 0;
+    left: 0;
+    z-index: 15;
+}
+#preloader .load-item{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 100px;
+    height: 100px;
+    z-index: 20;
+    border: 10px solid transparent;
+    border-top: 10px solid rgb(252, 13, 144);
+    border-radius: 50%;
+    animation: spin 1s ease-in infinite;
+}
+
+/******** Max Container with dark purple bg ********/
+.max-cont{
+    background-image: linear-gradient(180deg, rgb(17, 3, 49) 20%, rgb(11, 1, 34) 80%);
+    height: auto;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 30px 30px;
+    position: relative;
+    animation: slideInCont 1s ease-in-out;
+    animation-play-state: paused;
+}
+
+.max-cont p{
+    color: rgb(255, 255, 255);
+    text-align: left;
+    flex: 2 1 800px;
+    margin: 10px;
+}
+.max-cont i{
+        color:rgb(255, 255, 255);   
+        font-size: 2.5em;
+        align-self: center;
+}
+.max-cont .btn{
+    text-align: center;
+    flex: 1 1 400px;
+    padding: 10px 5px;
+    width:min-content;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(180deg, rgb(252, 13, 144) 20%, rgb(167, 3, 93) 80%);
+    border-radius: 10px;
+    align-self: center;
+    transition: all .5s ease-in;
+}
+.max-cont .btn:hover{
+    background: transparent;
+    border: 1.5px solid rgb(252, 13, 144);
+}
+/******** colors *********/
+.white { 
+    color:rgb(252, 252, 252)
+}
+.light-pink{
+    color: rgb(252, 13, 144);
+}
+.dark-pink{
+    color: rgb(167, 3, 93);
+}
+.light-purple{
+    color: rgb(17, 3, 49)
+}
+.dark-purple{
+    color: rgb(11, 1, 34)
+}
+.dark-grey{
+    color: rgb(34, 33, 33)
+}
+
+/********color change icon***********/
+.color-change{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(../img/brightness.png);
+    position: absolute;
+    right: 0;
+    top: 250px;
+}
+/*********  Navigation Area ********/
+.nav{
+    background-color: rgb(11, 1, 34);
+    padding: 5px 30px; 
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+}
+.nav .logo{
+    flex: 2 1 200px;
+    margin-right: auto;
+}
+.nav .navmenu{
+    flex: 1 1 100px;
+}
+.nav .navmenu a{
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+    transition: all .5s ease-in-out;
+}
+.nav .navmenu a:hover{
+    color: rgb(252, 13, 144);
+    font-weight: bold;
+}
+.nav .button-top{
+    width: 150px; 
+    padding: 5px 10px; 
+    border: 2px solid rgb(252, 13, 144);
+    border-radius: 10px;
+    background: transparent;
+    transition: all .5s ease-in-out;
+    text-align: center;
+}
+.nav .button-top:hover{
+    background: transparent; 
+    width: 150px;
+    padding: 5px 10px;
+    margin-left: 20px;
+    transform: scale(1.2);
+}
+
+/************* Carousl Slider ****************/
+.banner{
+    height: auto;
+    width: 100%;
+}
+.banner1{
+    height: 600px;
+    width: 100%;
+    background-image: url(../img/basket-with.jpg); 
+    background-position:center; 
+    background-repeat: no-repeat; 
+    background-size: cover;  
+    padding: 10px 30px; 
+    text-align: left; 
+    display: flex; 
+    flex-flow: row wrap; 
+    align-items: center;
+}
+.banner2{
+    height: 600px;
+    width: 100%;
+    background-image: url(../img/woman-holding.jpg); 
+    background-position:center; 
+    background-repeat: no-repeat; 
+    background-size: cover;  
+    padding: 10px 30px; 
+    text-align: left; 
+    display: flex; 
+    flex-flow: row wrap; 
+    align-items: center;
+}
+.banner3{
+    height: 600px;
+    width: 100%;
+    background-image: url(../img/cheerful-african.jpg); 
+    background-position:center; 
+    background-repeat: no-repeat; 
+    background-size: cover;  
+    padding: 10px 30px; 
+    text-align: left; 
+    display: flex; 
+    flex-flow: row wrap; 
+    align-items: center;
+}
+.banner4{
+    height: 600px;
+    width: 100%;
+    background-image: url(../img/young-african.jpg); 
+    background-position:center; 
+    background-repeat: no-repeat; 
+    background-size: cover;  
+    padding: 10px 30px; 
+    text-align: left; 
+    display: flex; 
+    flex-flow: row wrap; 
+    align-items: center;
+}
+.banner5{
+    height: 600px;
+    width: 100%;
+    background-image: url(../img/front-view-pile.jpg); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;  
+    padding: 10px 30px; 
+    text-align: left; 
+    display: flex; 
+    flex-flow: row wrap; 
+    align-items: center;
+}
+.left{
+    flex: 2 1 400px;
+    align-self: center;
+    margin-right: auto;
+}
+.right{
+    flex: 1 1 200px;
+    align-self: center;
+}
+.banner .right .img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    animation: banner 1s ease-in-out infinite;
+}
+.banner h1{
+    font-size:3em; 
+    line-height: 120%; 
+    font-weight:bold; 
+    color: rgb(252, 13, 144); 
+    margin: 30px auto; 
+    text-align: left;
+}
+.banner .btn {
+    padding: 5px 20px; 
+    border-radius: 5px;
+    background: rgb(223, 151, 17);
+    box-shadow: 0 0 10px rgba(185, 121, 3, 0.904);
+    width:max-content;
+}
+.banner .btn:hover {
+    background: transparent;
+    border: 2px solid rgb(223, 151, 17);
+    color: rgb(223, 151, 17);
+    box-shadow: none;
+}
+
+/********** Banner Contact Box ****************/
+#form {
+    font-family: baset, 'Times New Roman', Times, serif;
+}
+.contact {
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 10px 10px;
+    background-color: rgb(250, 246, 246);
+    opacity: 0.8;
+    border: 5px -5px 10px rgb(173, 171, 171); 
+    font-size: 1.2em;
+    border-radius: 15px;
+    animation: banner 1s ease-in-out infinite;
+    position: relative;
+}
+ .contact h1{
+    color:rgb(34, 33, 33);
+    font-size: 2em;
+    margin: 5px 5px;
+    text-align: center;
+ }
+ .contact input[type="text"]{
+    border: 2px solid rgb(167, 3, 93);
+    height: 35px;
+    width: 100%;
+    margin: 5px 0px;
+    border-radius: 5px;
+    font-size: 0.7em;
+    font-weight: bold;
+ }
+ .contact input[type="email"]{
+    border: 2px solid rgb(167, 3, 93);
+    height: 35px;
+    width: 100%;
+    margin: 5px 0px;
+    border-radius: 5px;
+    font-size: 0.7em;
+    font-weight: bold;
+ }
+ .contact textarea{
+    border: 2px solid rgb(167, 3, 93);
+    height: auto;
+    width: 100%;
+    margin: 5px 0px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+ }
+ .contact input[type="submit"]{
+    background-color:  rgb(167, 3, 93);
+    width: 100%;
+    border: none;
+    color:rgb(252, 249, 249);
+    font-size: 0.7em;
+    padding: 5px 10px;
+    margin: 5px auto;
+    border-radius: 5px;
+    text-align: center;
+ }
+/*********  Our Services **********/
+.service-cont{
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    margin: 20px auto;
+    position: relative;
+}
+
+.service-cont .service-items{
+    flex: 1 1 350px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px  rgb(252, 13, 144);
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    padding: 10px;
+    position: relative;
+    margin: 10px;
+    transition: all .5s ease-in-out;
+}
+.service-cont .service-items:hover{
+    flex: 1 1 350px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px  rgb(11, 1, 34);
+    background-color: rgb(11, 1, 34);
+    text-align: left;
+    padding: 10px;
+    position: relative;
+    margin: 10px;
+    color:rgb(252, 252, 252)
+}
+.service-cont .service-items img{
+    width: 100%;
+    height: 250px;
+    margin: 0 auto;
+}
+.service-cont .service-items h1{
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.service-cont .service-items p {
+    font-size: 1em;
+    font-style: italic;
+}
+
+/************** Contact Section ***************/
+.contact-box {
+    width: 100%; 
+    height: auto; 
+    padding: 5px 30px; 
+    margin: 20px auto; 
+    display:flex; 
+    flex-flow: row wrap; 
+    justify-content: center; 
+    align-items: stretch; 
+} 
+
+.contact-box .contact-items {
+    flex: 1 1 350px; 
+    align-self: center; 
+    box-shadow: 0 0 5px rgb(199, 198, 198); 
+    border-radius: 10px; 
+    margin: 10px;
+    padding: 20px; 
+    text-align: center;
+    position: relative;
+    transition: all .8s ease-in-out;
+    animation: slideIn 1s ease-in-out;
+    animation-play-state: paused;
+}
+
+.contact-items:hover{
+    transform: scale(1.1);
+}
+.contact-box .bg-blue {
+    background-color:rgb(37, 2, 70); 
+    color: rgb(255, 255, 255)
+}
+.contact-box .bg-pink {
+    background-color:rgb(168, 2, 58); 
+}
+.contact-box .bg-orange {
+    background-color:rgb(219, 134, 5); 
+}
+.contact-items i {
+    font-size: 2.5em;
+    color:rgb(255, 255, 255);
+}
+/*******  Service bookings *******/
+.service-booking{
+    height: 300px;
+    width: 100%;
+    background-image: url(../img/happy-housewife-cropped.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 5px 30px;
+}
+.service-booking .booking-item{
+    flex: 1 1 400px;
+    
+}
+.service-booking .booking-item-2{
+    flex: 1 1 400px;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.884);
+    border-radius: 5px;
+    padding: 0 20px;
+    transition: 1s;
+}
+.service-booking .booking-item h1{
+    color: rgb(252, 11, 91);
+    font-size: 2em;
+}
+.service-booking .booking-item-2:hover{
+    flex: 1 1 400px;
+    align-self: center;
+    background-color: rgba(11, 1, 34, 0.884);
+    border-radius: 5px;
+    padding: 0 20px;
+    color:#fff !important;
+}
+/********* Testimonials **********/
+.testimonial-cont{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 30px;
+    margin: 10px auto;
+}
+.testimonial-cont .t-items{
+    flex: 1 1 350px;
+    color: rgb(11, 1, 34);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(85, 84, 84);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    transition: all .5s ease-in-out;
+}
+.testimonial-cont .t-items img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.testimonial-cont .t-items .heading{
+    display: inline-block;
+    line-height: 100%;
+    text-align: left;
+    margin: 5px;
+}
+.testimonial-cont .t-items h1{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.testimonial-cont .t-items h2{
+    font-size: 1em;
+    font-style: italic;
+    color: rgb(252, 13, 144);
+}
+
+.testimonial-cont .t-items:hover{
+    flex: 1 1 400px;
+    background-color: rgb(11, 1, 34);
+    color: rgb(255, 255, 255) !important;
+    box-shadow: 0 0 10px rgb(85, 84, 84);
+}
+.light-pinky{
+    color: rgb(252, 13, 144);
+}
+
+/*************** Footer section **************/
+.footer {
+    padding: 30px; 
+    margin: 10px auto 0 auto; 
+    background: rgb(11, 1, 34);
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.footer .footer-items {
+    flex: 2 1 400px; 
+    margin-bottom: 10px;
+    margin-right: auto;
+}
+.footer .footer-items > i {
+    font-size: .8em; 
+    color:#fff; 
+    margin-right: 5px;
+}
+.footer .footer-items > a{
+    font-size: .8em; 
+    color:rgb(173, 171, 171);
+}
+.footer .footer-items > a:hover{
+    font-size: .8em; 
+    color:rgb(252, 11, 91); 
+}
+.footer .footer-items > h1 {
+    font-size: 1em; 
+    color:rgb(255, 255, 255);
+    text-align: left;
+}
+.footer .footer-items > p {
+    font-size: 1em; 
+    color:rgb(173, 171, 171);
+}
+.footer .footer-items-1 {
+    flex: 1 1 200px;
+}
+.footer .footer-items-1 > i {
+    font-size: .8em; 
+    color:rgb(255, 255, 255);
+    margin-right: 5px;
+}
+.footer .footer-items-1 > a{
+    font-size: .8em; 
+    color:rgb(173, 171, 171); 
+    display:block; 
+    margin-bottom: 10px;
+}
+.footer .footer-items-1 > a:hover{
+    font-size: .8em; 
+    color:rgb(252, 11, 91);  
+    display: block; 
+    margin-bottom: 10px;
+}
+.footer .footer-items-1 > h1 {
+    font-size: 1em; 
+    color:#fff;
+    text-align: left;
+}
+.footer .footer-items-1 > p {
+    font-size: 1em; 
+    color:rgb(173, 171, 171);
+}
+/*********** Modal ***************/
+
+.modal {
+    top: 30vh;
+    left: 35%;
+    width: 400px;
+    height: 400px;
+    margin: 10px auto;
+    padding: 10px 10px;
+    background-color: rgb(11, 1, 34);
+    opacity: 1;
+    border: 5px -5px 10px rgb(173, 171, 171); 
+    font-size: 1.2em;
+    border-radius: 15px;
+    position: fixed;
+    z-index: 14;
+}
+ .overlay{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 13;
+    background: rgba(0, 0, 0, 0.589);
+    backdrop-filter: blur (10px);
+
+}
+ .modal h1{
+    color:rgb(255, 254, 254);
+    font-size: 1.2em;
+    margin: 5px 5px;
+    text-align: center;
+ }
+ .modal input{
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 5px auto;
+    padding: 5px;
+    background-color: rgb(11, 1, 34);
+    color: rgb(255, 255, 255);
+ }
+ .modal input:focus{
+    border: 1px solid rgb(252, 11, 91);  
+ }
+ .modal .btn{
+    margin: 20px auto;
+    padding: 5px 10px;
+    background-color: rgb(252, 11, 91);
+    color:rgb(252, 252, 252);
+ }
+ .modal .btn:hover{
+    margin: 20px auto;
+    padding: 5px 10px;
+    background: transparent;
+    color:rgb(252, 11, 91);
+    border: 1px solid rgb(252, 11, 91);
+ }
+ .modal .close{
+    background-color: rgb(255, 255, 255);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    color: rgb(11, 1, 34);
+    padding:auto auto;
+    text-align:center;
+    font-weight: bold;
+    
+ }
+
+
+/********For Screens Less Than 500px**********/
+@media (max-width: 500px){
+    .nav .mob-item{
+        width:100%; 
+        color:rgb(255, 255, 255); 
+        padding: 30px;
+    }
+    .nav .mob-item > .nav-mob-items{
+        padding: 5px 30px;
+        display: block;
+        margin: 5px auto;
+        border-bottom: 1px solid rgb(36, 2, 117); 
+        color:rgb(255, 255, 255);
+    }
+    .nav .mob-item > .nav-mob-items:last-child{
+        border-bottom: none;
+        background-color: rgb(252, 11, 91);
+        width: fit-content;
+        margin-left: 0px;
+        margin-top: 10px;
+        transition: all 1s ease-in-out;
+    }
+    .nav .mob-item > .nav-mob-items:last-child:hover{
+        background: transparent;
+        border: 1px solid rgb(252, 11, 91);
+    }
+    .mob-nav {
+        color: rgb(255, 255, 255);
+        font-size: 1.5em;
+        margin-left: auto; 
+    }
+    .nav .mob-nav a {
+        color:rgb(255, 255, 255);
+    }
+    .nav i:hover {
+        color: rgb(252, 11, 91);
+        font-size: 1em;
+    }
+    .navmenu{
+        display: none;
+    }
+    .navmenu a{
+        display: none;
+    }
+    .button{
+        display: none;
+    }
+    .modal {
+        top: 20vh;
+        left: 10%;
+    }
+}
+@media (min-width: 500px){
+    .nav .nav-mob-items{display: hidden;}
+    .nav .mob-nav{display: none;}
+    .nav .mob-item {display: none;}
+}
+
+
+
+/******** Animations ************/
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        transition:all 1s ease-in infinite;
+    }100%{
+        transform: rotate(360deg);
+        transition:all 1s ease-in infinite;
+    }
+}
+@keyframes banner{
+    0%{
+        right: 0px;
+    }
+    50%{right: 50px;
+        
+    }
+    100%{
+        right: 0px;
+    }
+}
+
+@keyframes slideIn{
+    0%{
+        opacity: 0;
+        top: -100px;
+    }
+    100%{
+        opacity: 1;
+        top: 0px;
+    }
+}
+@keyframes slideInCont{
+    0%{
+        opacity: 0;
+        right: -200px;
+    }
+    100%{
+        opacity: 1;
+        right: 0px;
+    }
+}
