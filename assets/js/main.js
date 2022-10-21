@@ -31,7 +31,7 @@ $(document).ready(function(){
         loop:true,
     });
 
-   $(window).scroll(function(){
+    $(window).scroll(function(){
         if($(window).scrollTop() > 200){
             $('.contact-items').css('animation-play-state','running');
         }else{

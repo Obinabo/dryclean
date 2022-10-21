@@ -447,7 +447,7 @@ p{
     padding: 20px; 
     text-align: center;
     position: relative;
-    transition: all .8s ease-in-out;
+    transition: all .5s ease-in-out;
     animation: slideIn 1s ease-in-out;
     animation-play-state: paused;
 }
@@ -692,11 +692,13 @@ p{
     padding:auto auto;
     text-align:center;
     font-weight: bold;
-    
  }
 
+ .contact-box {
+    padding: 5px 10px;
+ }
 
-/********For Screens Less Than 500px**********/
+/******** For Screens Less Than 500px **********/
 @media (max-width: 500px){
     .nav .mob-item{
         width:100%; 
@@ -725,7 +727,7 @@ p{
     .mob-nav {
         color: rgb(255, 255, 255);
         font-size: 1.5em;
-        margin-left: auto; 
+        
     }
     .nav .mob-nav a {
         color:rgb(255, 255, 255);
@@ -744,16 +746,29 @@ p{
         display: none;
     }
     .modal {
+        width: 90%;
         top: 20vh;
-        left: 10%;
+        left: 5%;
     }
+    .service-cont{
+        padding: 5px 10px;
+        flex-flow: column wrap;
+    }
+    .service-cont .service-items{
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+    .testimonial-cont{
+        padding: 5px;}
 }
 @media (min-width: 500px){
-    .nav .nav-mob-items{display: hidden;}
+    .nav .nav-mob-items{display: none;}
     .nav .mob-nav{display: none;}
     .nav .mob-item {display: none;}
 }
-
+.contact{
+    display: none;
+}
 
 
 /******** Animations ************/
@@ -786,15 +801,5 @@ p{
     100%{
         opacity: 1;
         top: 0px;
-    }
-}
-@keyframes slideInCont{
-    0%{
-        opacity: 0;
-        right: -200px;
-    }
-    100%{
-        opacity: 1;
-        right: 0px;
     }
 }
