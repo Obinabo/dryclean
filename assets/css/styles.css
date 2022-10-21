@@ -330,7 +330,10 @@ p{
     border: 5px -5px 10px rgb(173, 171, 171); 
     font-size: 1.2em;
     border-radius: 15px;
-    animation: banner 1s ease-in-out infinite;
+    animation: banner 2s ease-out infinite;
+    animation-direction: alternate;
+    animation-delay: 2s;
+    transition-delay: 2s;
     position: relative;
 }
  .contact h1{
@@ -790,13 +793,16 @@ p{
 }
 @keyframes banner{
     0%{
-        right: 0px;
+        top: -50px;
+       
     }
-    50%{right: 50px;
-        
+    80%{
+        top: 0px;  
     }
-    100%{
-        right: 0px;
+    90%{
+        top: -5px;
+    }100%{
+        top: 0px;
     }
 }
 
