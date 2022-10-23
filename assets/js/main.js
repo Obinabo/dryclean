@@ -5,6 +5,10 @@ $(document).ready(function(){
         $('.overlay').hide();
         $('#preloader').fadeOut(500).remove();
     }
+     $('.banner a').click(function(evt) {
+        evt.preventDefault();
+        alert('This is a demo link that leads no where');
+    })
     $('.mob-nav a').click(function(){
         $('.mob-item').slideToggle();
     })
